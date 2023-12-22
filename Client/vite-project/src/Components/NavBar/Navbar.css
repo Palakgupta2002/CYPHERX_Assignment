@@ -1,0 +1,19 @@
+.displayContainer{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 5px;
+    width: fit-content;
+}
+.navbarContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 2%;
+
+}
+.popUpContainer>div{
+    display: flex;
+    gap: 30px;
+    
+}
