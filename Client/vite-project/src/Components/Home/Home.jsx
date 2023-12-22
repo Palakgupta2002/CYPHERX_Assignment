@@ -1,18 +1,21 @@
 import React from 'react'
 import Navbar from '../NavBar/Navbar'
-import InfoCard from '../Card/InfoCard'
-import { useContext,useState } from 'react'
-import InfoContext from '../../Config/Context'
+import { useContext, useState } from 'react'
+import InfoContext from '../Context'
+import Board from '../Board/Board'
+
 
 
 const Home = () => {
-    
+    const [Grouping, setGrouping] = useState("Priority")
+    const [Ordering, setOrdering] = useState("Title")
+
     return (
         <>
-        <InfoContext.Provider>
-            <Navbar />
-            <InfoCard />
-        </InfoContext.Provider>
+            <InfoContext.Provider value={{ setGrouping, setOrdering, Ordering, Grouping }}>
+                <Navbar />
+                <Board />
+            </InfoContext.Provider>
         </>
 
     )

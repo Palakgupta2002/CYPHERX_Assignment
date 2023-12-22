@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Button, Popover } from 'antd';
 import { ControlOutlined, UpOutlined, DownOutlined } from '@ant-design/icons'
 import "./Navbar.css"
 import Moon from "../../assets/Moon.svg"
 import Sun from "../../assets/Sun.svg"
-
-
+import InfoContext from '../Context';
 
 const Navbar = () => {
-    const [Grouping,setGrouping]=useState("Priority")
-    const [Ordering,setOrdering]=useState("Title")
+    const { setGrouping, setOrdering, Ordering, Grouping } = useContext(InfoContext);
+
     const [open, setOpen] = useState(false);
     const hide = () => {
         setOpen(false);
@@ -17,14 +16,14 @@ const Navbar = () => {
     const handleOpenChange = (newOpen) => {
         setOpen(newOpen);
     };
-    const handleGrouping=(event)=>{
+    const handleGrouping = (event) => {
         setGrouping(event.target.value)
     }
-    const handleOrdering=(event)=>{
+    const handleOrdering = (event) => {
         setOrdering(event.target.value)
     }
 
-    const content=(
+    const content = (
         <div className='popUpContainer'>
             <div>
                 <div>Grouping</div>
