@@ -29,9 +29,9 @@ const Navbar = () => {
                 <div>Grouping</div>
                 <div>
                     <select onChange={handleGrouping} value={Grouping} name="" id="">
-                        <option value="Priority">Priority</option>
-                        <option value="Users">Users</option>
-                        <option value="Status">Status</option>
+                        <option value="priority">Priority</option>
+                        <option value="userId">Users</option>
+                        <option value="status">Status</option>
                     </select>
                 </div>
             </div>
@@ -39,8 +39,8 @@ const Navbar = () => {
                 <div>Ordering</div>
                 <div>
                     <select onChange={handleOrdering} value={Ordering} name="" id="">
-                        <option value="Priority">Priority</option>
-                        <option value="Title">Title</option>
+                        <option value="priority">Priority</option>
+                        <option value="title">Title</option>
                     </select>
                 </div>
             </div>

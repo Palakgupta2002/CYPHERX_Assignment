@@ -1,50 +1,70 @@
-import React from 'react';
-import { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import config from "../../Config/Config.json";
 import Card from '../Card/Card';
 import "./Board.css";
 import InfoContext from '../Context';
 
+
 const Board = () => {
     const [userData, setUserData] = useState([]);
-    const {Grouping,Ordering}=useContext(InfoContext);
-  
+    const { Grouping, Ordering } = useContext(InfoContext);
+    const [GroupFilterdData,setGrouptFilteredData]=useState([])
+
     useEffect(() => {
         getData();
-    }, []);
-  
+    }, [Grouping]);
 
     const getData = async () => {
-        const data = await fetch(config.api_url);
-        const result = await data.json();
-        setUserData(result);
+        try {
+            const data = await fetch(config.api_url);
+            const result = await data.json();
+            setUserData(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     }
-      
+
+    const getFilteredData = () => {
+        let groupData = {};
+        userData?.tickets?.forEach((ele) => {
+            let key = ele[Grouping];
+            if (!groupData[key]) {
+                groupData[key] = [];
+            }
+            groupData[key].push(ele);
+        });
+        setGrouptFilteredData(groupData);
+    
+    }
+
+    useEffect(() => {
+        const filteredData = getFilteredData(Grouping);
+        
+    }, [userData, Grouping]);
     
 
     return (
         <div>
-            <div className="ticketsContainer">
-                {
-                   userData?.tickets?.map(({ id, title, status, tag, priority, userId }, index) =>
-                   <Card
-                       key={index}
-                       id={id}
-                       title={title}
-                       status={status}
-                       tag={tag}
-                       priority={priority}
-                       userId={userId}
-                       users={userData.users}
-                   />
-               )
-               
-                }
-            </div>
+                   {
+                   Object.values(
+                    config.Valuesarray[Grouping]
+                    ).map((ele,index)=>
+                    <span key={index}>{ele}</span>
+                    )
+                    }
+            {
+                Object.keys(GroupFilterdData).length>0 && Object.entries(GroupFilterdData).map(([key,value])=>
+                <>
 
+                </>
+                
+                )
+                
+            }
 
+            
         </div>
-    )
+    );
 }
 
-export default Board
+export default Board;

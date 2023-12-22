@@ -7,8 +7,8 @@ import Board from '../Board/Board'
 
 
 const Home = () => {
-    const [Grouping, setGrouping] = useState("Priority")
-    const [Ordering, setOrdering] = useState("Title")
+    const [Grouping, setGrouping] = useState("priority")
+    const [Ordering, setOrdering] = useState("title")
 
     return (
         <>

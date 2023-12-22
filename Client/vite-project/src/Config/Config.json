@@ -1,3 +1,27 @@
 {
-    "api_url":"https://tfyincvdrafxe7ut2ziwuhe5cm0xvsdu.lambda-url.ap-south-1.on.aws/ticketAndUsers"
+    "api_url":"https://tfyincvdrafxe7ut2ziwuhe5cm0xvsdu.lambda-url.ap-south-1.on.aws/ticketAndUsers",
+    "Valuesarray":{
+        "userId":
+            {
+                "usr-1":"Anoop sharma",
+                "usr-2":"Yogesh",
+                "usr-3":"Shankar Kumar",
+                "usr-4":"Ramesh",
+                "usr-5":"Suresh"
+            },
+            "priority":{
+                "0":"No-Priority",
+                "1":"Low",
+                "2":"Medium",
+                "3":"High",
+                "4":"Urgent"
+            },
+            "status":{
+                "Todo":"Todo",
+                "Backlog":"Backlog",
+                "In progress":"In progress",
+                "Done":"Done",
+                "Cancelled":"Cancelled"
+            }     
+    }
 }
