@@ -18,8 +18,8 @@ import Plus from "../../assets/plus.svg"
 
 const Board = () => {
   const [userData, setUserData] = useState([]);
-  const { Grouping, Ordering } = useContext(InfoContext);
-  const [GroupFilterdData, setGrouptFilteredData] = useState({}); 
+  const { Grouping, Ordering,Theme } = useContext(InfoContext);
+  const [GroupFilterdData, setGrouptFilteredData] = useState({});
 
   const priorityImages = {
     0: Lower,
@@ -27,25 +27,25 @@ const Board = () => {
     2: Low,
     3: Medium,
     4: High
-};
-const selectedImage = (priority) => {
-  return priorityImages[priority] || High; 
-};
-const StatusImages = {
-  "Todo": ToDo,
-  "Backlog": Backlog,
-  "In progress": Progress,
-  "Done":Done,
-  "Cancelled":Cancel
-}
-const selectedStatusImages = (status)=>{
- return StatusImages[status] || 'Todo';
-}
+  };
+  const selectedImage = (priority) => {
+    return priorityImages[priority] || High;
+  };
+  const StatusImages = {
+    "Todo": ToDo,
+    "Backlog": Backlog,
+    "In progress": Progress,
+    "Done": Done,
+    "Cancelled": Cancel
+  }
+  const selectedStatusImages = (status) => {
+    return StatusImages[status] || 'Todo';
+  }
 
   useEffect(() => {
     getData();
   }, [Grouping]);
-  
+
   const getData = async () => {
     try {
       const data = await fetch(config.api_url);
@@ -73,12 +73,23 @@ const selectedStatusImages = (status)=>{
       }
     });
 
+    Object.entries(groupData).forEach(([key, value]) => {
+      groupData[key] = value?.sort((a, b) => {
+        if (Ordering === 'title') {
+          return a?.title?.localeCompare(b?.title);
+        } else if (Ordering === 'priority') {
+          return b?.priority - a?.priority;
+        }
+        return 0;
+      });
+    });
     setGrouptFilteredData(groupData);
   };
 
+
   useEffect(() => {
-    getFilteredData(Grouping);
-  }, [userData, Grouping]);
+    getFilteredData();
+  }, [userData, Grouping, Ordering]);
 
   const ProfilePhoto = (userId) => {
     const fullName = config.Valuesarray[Grouping]?.[userId];
@@ -99,7 +110,7 @@ const selectedStatusImages = (status)=>{
     return (<><h1>Loading</h1></>);
   } else {
     return (
-      <div className='ticketsContainer'>
+      <div className={`ticketsContainer ${Theme === 'Dark' ? 'darkBackground' : 'lightBackground'}`}>
         {
           Object.keys(GroupFilterdData).length > 0 ? (
             Object.entries(GroupFilterdData).map(([key, value]) => (
@@ -108,19 +119,19 @@ const selectedStatusImages = (status)=>{
                   <div className='ticketNavRightContainer'>
                     <div>
                       {
-                        Grouping === "userId"?
-                        <div className='ProfilePhotoStyle' 
-                        style={{ backgroundColor: getRandomColor() }}>
-                        {ProfilePhoto(key)}
-                          <span></span>
-                          <span></span>
-                        </div>
-                         :Grouping === "priority" ?
-                         <img src={selectedImage(parseInt(key))} width={"20px"} alt={`Priority_${key}`} />
-                        : Grouping === "status" ?<>
-                        <img src={selectedStatusImages((key))} width={"20px"} alt={`Status_${key}`} />
-                        </>:
-                        <>No data available</>
+                        Grouping === "userId" ?
+                          <div className='ProfilePhotoStyle'
+                            style={{ backgroundColor: getRandomColor() }}>
+                            {ProfilePhoto(key)}
+                            <span></span>
+                            <span></span>
+                          </div>
+                          : Grouping === "priority" ?
+                            <img src={selectedImage(parseInt(key))} width={"20px"}  />
+                            : Grouping === "status" ? <>
+                              <img src={selectedStatusImages((key))} width={"20px"}  />
+                            </> :
+                              <>No data available</>
                       }
                     </div>
                     <div>{config.Valuesarray[Grouping]?.[key]}</div>
@@ -131,7 +142,7 @@ const selectedStatusImages = (status)=>{
                     <div><img src={Lower} width={"20px"} alt="" /></div>
                   </div>
                 </div>
-                
+
                 {value.map((card, index) => (
                   <Card
                     key={index}
@@ -154,5 +165,4 @@ const selectedStatusImages = (status)=>{
   }
 };
 
-export default Board;
-
+export default Board;

@@ -11,7 +11,7 @@ import "./Card.css";
 import InfoContext from '../Context';
 
 const Card = ({ id, title, status, tag, priority, name }) => {
-    const { Grouping, Ordering } = useContext(InfoContext)
+    const { Grouping, Ordering,Theme } = useContext(InfoContext)
 
 
     const priorityImages = {
@@ -41,7 +41,7 @@ const Card = ({ id, title, status, tag, priority, name }) => {
         
       };
     return (
-        <div className='card'>
+       <div className={`card ${Theme === 'Dark' ? 'darkCard' : 'lightCard'}`}>
             <div id='cardContentDesign' className='topCardContent'>
                 <div>{id}</div>
                 <div >
@@ -56,13 +56,15 @@ const Card = ({ id, title, status, tag, priority, name }) => {
                 <div>
                     {Grouping!=="status" && <img width={"20px"} src={selectedStatusImages} alt="" />}
                 </div>
-                <div>{title}</div>
+                <div className='titleStyle'>{title}</div>
             </div>
             <div className='lowerCardContent'>
-                <div>
-                    {Grouping!=="priority" && <img width={"20px"} src={selectedImage} alt="" />}
+                { Grouping === "userId" &&
+                <div className='containerBorder'>
+                    {Grouping!=="priority"  && <img width={"10px"} src={selectedImage} alt="" />}
                 </div>
-                <div>{tag}</div>
+                }
+                <div className='containerBorder'>{tag}</div>
             </div>
 
         </div>

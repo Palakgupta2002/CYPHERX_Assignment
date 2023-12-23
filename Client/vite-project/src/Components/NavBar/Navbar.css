@@ -6,14 +6,12 @@
     padding: 7px;
     width: fit-content;
     border-radius: 8px;
-    background-color: white;
+    
 }
 .navbarContainer{
     display: flex;
     justify-content: space-between;
     padding: 1% 2%;
-    background-color: white;
-
 }
 .popUpContainer>div{
     display: flex;

@@ -9,10 +9,11 @@ import Board from '../Board/Board'
 const Home = () => {
     const [Grouping, setGrouping] = useState("priority")
     const [Ordering, setOrdering] = useState("title")
+    const [Theme,setTheme]=useState("Light")
 
     return (
         <>
-            <InfoContext.Provider value={{ setGrouping, setOrdering, Ordering, Grouping }}>
+            <InfoContext.Provider value={{ setGrouping, setOrdering, Ordering, Grouping,Theme,setTheme }}>
                 <Navbar />
                 <Board />
             </InfoContext.Provider>

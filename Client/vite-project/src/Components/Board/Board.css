@@ -21,3 +21,14 @@
   display: flex;
   column-gap: 10px;
 }
+.darkBackground {
+  background-color: #010409;
+  color: white; /* Text color */
+  
+}
+
+.lightBackground {
+  background-color: rgb(166, 159, 159);
+  color: black; /* Text color */
+}
+
