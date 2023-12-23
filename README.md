@@ -1,5 +1,6 @@
 # CYPHERX_Assignment
 
+
 ### OverView
  - This repository contains an assignment project showcasing a Kanban Dashboard . The dashboard aims to simplify data management by providing efficient sorting and filtering functionalities based on status, priority, and users.
 
@@ -29,11 +30,8 @@
 3. Netlify
 4. Vite
 
-### Possible Errors
 
-- if Api is not call properly or may be some others type of API Issues
-
-### Screensorts
+### Screenshort
 
 - Filter Data SS
 
