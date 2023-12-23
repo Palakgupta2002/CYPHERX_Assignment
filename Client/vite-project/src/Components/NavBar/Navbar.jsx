@@ -40,7 +40,7 @@ const Navbar = () => {
                 <div>
                     <select onChange={handleOrdering} value={Ordering} name="" id="">
                         <option value="priority">Priority</option>
-                        <option value="title">Title</option>
+                        <option value="title">Title </option>
                     </select>
                 </div>
             </div>
@@ -59,7 +59,7 @@ const Navbar = () => {
                         <span className="settingIcon"><ControlOutlined /></span>
                         <span>Display</span>
                         <span className="upAndDownIcon">
-                            {open ? <UpOutlined /> : <DownOutlined />}
+                            {open ? <UpOutlined  /> : <DownOutlined  />}
                         </span>
                     </div>
                 </Popover>

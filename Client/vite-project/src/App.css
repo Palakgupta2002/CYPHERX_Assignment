@@ -1,4 +1,28 @@
 body{
   font-family: "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     scroll-behavior: smooth;
+    background-color: #f4f5f8;
+}
+.ProfilePhotoStyle {
+  position: relative;
+  padding: 1px;
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+
+.ProfilePhotoStyle > span {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: yellow;
+  border-radius: 50%;
+  bottom: 1px;
+  right: 2px;
 }

@@ -1,11 +1,26 @@
 .card{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     padding: 20px;
-    text-align: left;
     border-radius: 8px;
     line-height: 1.6rem;
-
-}
+    background-color: white;
+  
+   margin-top: 20px !important;
+   
+   }
 .priorityWithRequestType{
     display: flex;
+}
+#cardContentDesign{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.mediumCardContent{
+    display: flex;
+    column-gap: 10px;
+}
+.lowerCardContent{
+    display: flex;
+    column-gap: 10px;
 }

@@ -1,6 +1,23 @@
 .ticketsContainer{
    display: grid;
-   grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(5,1fr);
  gap: 20px;
  padding: 20px;
+ 
+}
+.userIdContainer{
+  display: flex;
+  column-gap: 10px;
+}
+.ticketNavRightContainer{
+  display: flex;
+  column-gap: 10px;
+}
+.ticketNavContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.ticketNavLeftContainer{
+  display: flex;
+  column-gap: 10px;
 }
