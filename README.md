@@ -37,15 +37,15 @@
 
 - Filter Data SS
 
-![alt](https://ibb.co/7NkNwRg)
+<a href="https://ibb.co/7NkNwRg"><img src="https://i.ibb.co/n8P8Hn3/Screenshot-168.png" alt="Screenshot-168" border="0" /></a>
 
 - Sort Data Assending order
 
-![alt](https://ibb.co/bKqDF44)
+<a href="https://ibb.co/bKqDF44"><img src="https://i.ibb.co/vjgRhNN/Screenshot-171.png" alt="Screenshot-171" border="0" /></a>
 
 - Dark Mode
 
-![alt](https://ibb.co/kSZ8k9L)
+<a href="https://ibb.co/kSZ8k9L"><img src="https://i.ibb.co/FDpwN0Q/Screenshot-174.png" alt="Screenshot-174" border="0"></a>
 
 - 
 
