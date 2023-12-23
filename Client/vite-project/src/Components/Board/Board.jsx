@@ -5,9 +5,9 @@ import "./Board.css";
 import InfoContext from '../Context';
 import High from "../../assets/High.svg";
 import Low from "../../assets/Low.svg";
-import Medium from "../../assets/Medium.svg";
+import Medium from "../../assets/Medium.svg"
 import veryLow from "../../assets/VeryLow.svg";
-import ToDo from "../../assets/circle.svg"
+import ToDo from "../../assets/circle.svg";
 import Backlog from "../../assets/Dotted.svg"
 import Progress from "../../assets/PieChart.svg"
 import Lower from "../../assets/Lower.svg"

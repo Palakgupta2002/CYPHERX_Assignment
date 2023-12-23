@@ -7,6 +7,7 @@ import ToDo from "../../assets/circle.svg"
 import Backlog from "../../assets/Dotted.svg"
 import Progress from "../../assets/PieChart.svg"
 import Lower from "../../assets/Lower.svg"
+import Cancel from "../../assets/cancel.svg"
 import "./Card.css";
 import InfoContext from '../Context';
 
